@@ -78,6 +78,8 @@ function check_percent {
         elif [ $(bc <<< "$THIS_DATA_PCT >= $WARN_THOLD") -eq 1 ]; then
             ((WARN_COUNT++))
             OUTPUT="${OUTPUT} <font color=${WARN_COLOR}>${THIS_NAME} Use: ${THIS_DATA_PCT}%</font>"
+        else
+            OUTPUT="${OUTPUT} ${THIS_NAME} Use: ${THIS_DATA_PCT}%"
         fi              
     fi              
 }
